@@ -7,12 +7,17 @@ var SocketClient = require('../lib/socket').Client;
 
 router.get('/', function(req, res) {
   var time_seed    = new Date(),
-      channel_name = md5(time_seed);
+      channel_name = md5(time_seed),
+      port         = req.app.settings.port,
+      host         = req.protocol + '://' + req.host  + ( port == 80 || port == 443 ? '' : ':' + port );
 
   // Create socket client for LineClient
   var socket_client = new SocketClient(channel_name);
 
-  res.render('index', { channel_name: channel_name });
+  res.render('index', {
+    host: host,
+    channel_name: channel_name
+  });
 });
 
 module.exports = router;
