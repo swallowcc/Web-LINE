@@ -3,7 +3,7 @@ var debug = require('debug')('expressapp');
 var app = require('../app');
 var socket_management = require('../lib/socket').management;
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000);
 
 var server = require('http').createServer(app);
 
