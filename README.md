@@ -10,6 +10,8 @@ Web-LINE
 Demo
 ------------
 
+http://webline-chsien.rhcloud.com/
+
 這是 Public Server，建議使用分身帳號測試
 
 未加密的狀態下使用上會有安全性問題
