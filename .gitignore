@@ -1,5 +1,6 @@
 node_modules/
 public/components
+npm-debug.log
 .sass-cache
 .DS_Store
 .editorconfig
