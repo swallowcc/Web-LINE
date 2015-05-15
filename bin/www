@@ -3,7 +3,8 @@ var debug = require('debug')('expressapp');
 var app = require('../app');
 var socket_management = require('../lib/socket').management;
 
-var server_port = process.env.PORT || 3000;
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000;
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 var server = require('http').createServer(app);
 
 app.set('port', server_port);
@@ -11,6 +12,6 @@ app.set('port', server_port);
 var socket_management = require('../lib/socket').management;
 var io = socket_management.io = require('socket.io')(server);
 
-server.listen(app.get('port'), function() {
+server.listen(app.get('port'), server_ip_address, function() {
   console.log("Express server listening on port " + app.get('port'));
 });
