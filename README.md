@@ -27,21 +27,19 @@ grunt
 
 瀏覽器開啟 `http://localhost:3000`
 
-功能
+Feature
 ------------
 
 * 帳號登入
 * 取得聯絡人
 * 接收與送出訊息
 
-歡迎 Fork 及 Pull request
+歡迎 fork 及 pull request
 
-感謝
+感謝及聲明
 ------------
 感謝 purple-line 這個專案提供的 Protocol 及說明
 
-聲明
-------------
 本專案僅可用於個人使用，不可用在商業用途
 
 聯絡我：LeeChSien <chsienlee@gmail.com>
