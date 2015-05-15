@@ -1,0 +1,62 @@
+<div class="col-xs-8 chat-frame" ng-controller="chatCtrl">
+  <div class="panel panel-default">
+    <div class="messagebox-frame">
+      <div class="messagebox">
+        <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="10" min-scrollbar-length="20" scroll-glue>
+
+          <div class="messagelist">
+            <div class="message" ng-repeat="message in messages">
+              <img ng-src="{{buddyAvatar}}" alt="頭像" class="img-circle avatar you" ng-if="!isMyMessage(message)">
+              <img ng-src="{{myAvatar}}" alt="頭像" class="img-circle avatar me" ng-if="isMyMessage(message)">
+
+              <div class="bubble"
+                ng-class="isMyMessage(message) ? 'me' : 'you'">
+
+                <div ng-switch="message.contentType">
+                  <span ng-switch-when="0">{{ message.text }}</span>
+                  <span ng-switch-when="1">照片</span>
+                  <span ng-switch-when="2">影片</span>
+                  <span ng-switch-when="7">貼圖</span>
+                  <span ng-switch-default>例外媒體內容</span>
+                </div>
+              </div>
+              <div class="time"
+                ng-class="isMyMessage(message) ? 'me' : 'you'">
+                <span am-time-ago="message.createdTime"></span><br>
+              </div>
+            </div>
+          </div>
+        </perfect-scrollbar>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-default navbar-messagebox">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="訊息內容"
+          ng-model="model.message" ng-keypress="inputKeypress($event)">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button" ng-click="sendMessage()">送出</button>
+        </span>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<div class="col-xs-4 buddy-frame" ng-controller="buddyCtrl">
+  <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="10" min-scrollbar-length="20">
+    <div class="list-group buddy-list">
+      <a href="#" class="list-group-item" ng-repeat="buddy in buddies" ng-click="selectBuddy(buddy)"
+        ng-class="(buddyProfile && buddyProfile.mid == buddy.mid) ? 'active' : ''">
+        <div class="contact">
+          <img class="avatar" ng-src="http://os.line.naver.jp/{{ buddy.picturePath }}/preview" ng-if="buddy.picturePath" />
+          <img class="avatar" src="/img/no-avatar.png" ng-if="!buddy.picturePath"/>
+
+          <div class="description">
+            <h4 class="list-group-item-heading">{{ buddy.displayName }}</h4>
+            <p class="list-group-item-text">{{ buddy.mid }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </perfect-scrollbar>
+</div>

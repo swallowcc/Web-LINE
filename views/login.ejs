@@ -1,0 +1,46 @@
+<div class="col-md-offset-4 col-md-4">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <form class="form-vertical">
+        <h2 class="form-signin-heading">Web LINE</h2>
+
+        <div ng-switch="loginStatus">
+          <div ng-switch-when="prepare">
+            <hr>
+            <div class="form-group">
+              <label for="inputEmail" class="sr-only">Email</label>
+              <input type="email" id="inputEmail" class="form-control" placeholder="Email" ng-model="user.id" autofocus>
+            </div>
+
+            <div class="form-group">
+              <label for="inputPassword" class="sr-only">密碼</label>
+              <input type="password" id="inputPassword" class="form-control" placeholder="Password" ng-model="user.password">
+            </div>
+
+            <button class="btn btn-primary btn-block" type="submit" ng-click="login()">登入</button>
+          </div>
+
+          <div ng-switch-when="waiting">
+            <hr>
+            <div class="input-group">
+              <span class="input-group-addon">
+                等待輸入手機驗證碼：
+              </span>
+              <input type="text" class="form-control" aria-label="..." ng-model="pinCode" readonly="readyonly">
+            </div><!-- /input-group -->
+          </div>
+          <div ng-switch-when="success">
+            <hr>
+            <h4>登入成功</h4>
+          </div>
+          <div ng-switch-when="error">
+            <hr>
+            <h4>登入錯誤</h4>
+            <p>Reason: {{ loginError.reason }}</p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>

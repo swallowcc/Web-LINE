@@ -1,0 +1,12 @@
+<div class="container" ng-controller="mainCtrl" ng-switch="appStatus">
+  <div id="login" class="row"
+    ng-switch-when="login" ng-controller="loginCtrl" style="margin-top: 50px;">
+    <% include login %>
+  </div>
+
+
+  <div id="chat" class="row"
+    ng-switch-when="chat" ng-controller="chatFrameCtrl">
+    <% include chat %>
+  </div>
+</div>

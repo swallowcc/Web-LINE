@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+var debug = require('debug')('expressapp');
+var app = require('../app');
+var socket_management = require('../lib/socket').management;
+
+app.set('port', process.env.PORT || 3000);
+
+var server = require('http').createServer(app);
+
+var socket_management = require('../lib/socket').management;
+var io = socket_management.io = require('socket.io')(server);
+
+server.listen(app.get('port'), function() {
+  console.log("Express server listening on port " + app.get('port'));
+});
