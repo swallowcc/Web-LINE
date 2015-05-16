@@ -48,8 +48,8 @@
       <a href="#" class="list-group-item" ng-repeat="buddy in buddies" ng-click="selectBuddy(buddy)"
         ng-class="(buddyProfile && buddyProfile.mid == buddy.mid) ? 'active' : ''">
         <div class="contact">
-          <img class="avatar" ng-src="http://os.line.naver.jp/{{ buddy.picturePath }}/preview" ng-if="buddy.picturePath" />
-          <img class="avatar" src="/img/no-avatar.png" ng-if="!buddy.picturePath"/>
+          <img class="img-circle avatar" ng-src="http://os.line.naver.jp/{{ buddy.picturePath }}/preview" ng-if="buddy.picturePath" />
+          <img class="img-circle avatar" src="/img/no-avatar.png" ng-if="!buddy.picturePath"/>
 
           <div class="description">
             <h4 class="list-group-item-heading">{{ buddy.displayName }}</h4>
