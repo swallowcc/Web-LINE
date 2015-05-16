@@ -1,7 +1,7 @@
 Web-LINE
 ==============
 
-![alt tag](https://cloud.githubusercontent.com/assets/1298784/7665345/78e83128-fbe5-11e4-9d14-b6115380284a.png)
+![alt tag](https://cloud.githubusercontent.com/assets/1298784/7665406/912ee914-fbe7-11e4-85ec-7cc6f0ce0b09.png)
 
 簡單來說，就是讓你可以用 Web 連上 LINE
 
