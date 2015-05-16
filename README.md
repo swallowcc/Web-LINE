@@ -1,6 +1,8 @@
 Web-LINE
 ==============
 
+![alt tag](https://cloud.githubusercontent.com/assets/1298784/7665345/78e83128-fbe5-11e4-9d14-b6115380284a.png)
+
 簡單來說，就是讓你可以用 Web 連上 LINE
 
 可以幫助你在沒有 LINE 的平台上也能用 LINE
