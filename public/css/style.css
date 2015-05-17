@@ -3,7 +3,9 @@ body, html, .container {
 
 .container {
   width: 970px !important;
-  overflow: hidden; }
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
 
 .buddy-container {
   position: relative;
@@ -41,7 +43,9 @@ body, html, .container {
 
 .buddy-frame, .chat-frame {
   position: relative;
-  height: 100%; }
+  height: 100%;
+  overflow-y: hidden;
+}
 
 .scroller {
   height: 100%;

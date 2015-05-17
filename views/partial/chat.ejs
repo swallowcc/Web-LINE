@@ -11,7 +11,8 @@
         載入最近對話...</h4>
 
       <div class="messagebox" ng-if="chatFrameStatus == 'ready_to_chat'">
-        <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="10" min-scrollbar-length="20" scroll-glue>
+        <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="10"
+          min-scrollbar-length="20" suppress-scroll-x="true" scroll-glue>
 
           <div class="messagelist">
             <div class="message" ng-repeat="message in messages">
@@ -58,7 +59,9 @@
       <input type="text" class="form-control" placeholder="使用者名稱" aria-describedby="basic-addon1" ng-model="searchBuddyName">
     </div>
     <div class="buddy-list">
-      <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="10" min-scrollbar-length="20">
+      <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="10"
+        min-scrollbar-length="20" suppress-scroll-x="true">
+        
         <div class="list-group">
           <a href="#" class="list-group-item" ng-repeat="buddy in buddies | filter:searchBuddyName" ng-click="selectBuddy(buddy)"
             ng-class="(buddyProfile && buddyProfile.mid == buddy.mid) ? 'active' : ''">

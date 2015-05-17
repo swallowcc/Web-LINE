@@ -4,7 +4,8 @@ body, html, .container {
 
 .container {
   width: 970px !important;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .buddy-container {
