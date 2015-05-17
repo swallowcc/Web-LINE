@@ -14,9 +14,9 @@ Demo
 
 http://webline-chsien.rhcloud.com/
 
-這是 Public Server，建議使用分身帳號測試
+這是 public server，支援多人連線，但上限不確定能撐多少人
 
-未加密的狀態下使用上會有安全性問題
+未加密的狀態下使用上可能會有安全性問題，建議使用分身帳號測試
 
 Usage
 ------------
