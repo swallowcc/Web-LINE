@@ -2,22 +2,38 @@ body, html, .container {
   height: 100%; }
 
 .container {
-  width: 970px !important; }
+  width: 970px !important;
+  overflow: hidden; }
 
-.buddy-list .contact {
-  display: inline-block;
+.buddy-container {
+  position: relative;
+  width: 100%;
+  height: 100%; }
+
+.search-buddy {
+  position: absolute;
+  top: 0;
+  margin: 10px 0 10px 0; }
+
+.buddy-list {
+  position: absolute;
+  padding-top: 54px;
+  height: 100%;
   width: 100%; }
-  .buddy-list .contact .avatar {
-    float: left;
-    width: 50px;
-    height: 50px; }
-  .buddy-list .contact .description {
-    float: left;
-    padding-left: 10px; }
-    .buddy-list .contact .description .list-group-item-text {
-      width: 150px;
-      overflow: hidden;
-      text-overflow: ellipsis; }
+  .buddy-list .contact {
+    display: inline-block;
+    width: 100%; }
+    .buddy-list .contact .avatar {
+      float: left;
+      width: 50px;
+      height: 50px; }
+    .buddy-list .contact .description {
+      float: left;
+      padding-left: 10px; }
+      .buddy-list .contact .description .list-group-item-text {
+        width: 150px;
+        overflow: hidden;
+        text-overflow: ellipsis; }
 
 #chat {
   height: 100%;
@@ -98,13 +114,13 @@ body, html, .container {
   .message .me {
     float: right;
     margin: 5px 20px 5px 10px;
-    background-color: #5597da;
+    background-color: #1bb200;
     color: white; }
     .message .me a {
       color: #ddd; }
   .message .me::before {
     right: -9px;
-    background-color: #5597da; }
+    background-color: #1bb200; }
   .message .typing {
     opacity: 0.7;
     font-size: 14px;

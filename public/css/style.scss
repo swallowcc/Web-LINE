@@ -4,9 +4,27 @@ body, html, .container {
 
 .container {
   width: 970px !important;
+  overflow: hidden;
+}
+
+.buddy-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.search-buddy {
+  position: absolute;
+  top: 0;
+  margin: 10px 0 10px 0;
 }
 
 .buddy-list {
+  position: absolute;
+  padding-top: 54px;
+  height: 100%;
+  width: 100%;
+
   .contact {
     display: inline-block;
     width: 100%;
@@ -126,7 +144,7 @@ body, html, .container {
     float: right;
     margin: 5px 20px 5px 10px;
 
-    background-color: #5597da;
+    background-color: rgba(27, 178, 0, 1);
     color: white;
 
     a {
@@ -136,7 +154,7 @@ body, html, .container {
 
   .me::before {
     right: -9px;
-    background-color: #5597da;
+    background-color: rgba(27, 178, 0, 1);
   }
 
   .typing {

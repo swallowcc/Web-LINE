@@ -1,6 +1,7 @@
 node_modules/
 public/components
 npm-debug.log
+api_test/
 .sass-cache
 .DS_Store
 .editorconfig

@@ -1,7 +1,16 @@
-<div class="col-xs-8 chat-frame" ng-controller="chatCtrl">
+<div class="col-xs-12" ng-if="chatFrameStatus == 'intialize'">
+  <h3 class="text-center">登入成功，載入中...</h3>
+</div>
+
+<div class="col-xs-8 chat-frame" ng-controller="chatCtrl" ng-if="chatFrameStatus != 'intialize'">
   <div class="panel panel-default">
     <div class="messagebox-frame">
-      <div class="messagebox">
+      <h4 class="text-center" ng-if="chatFrameStatus == 'unselect_buddy'">
+        請選擇一位對象開始聊天</h4>
+      <h4 class="text-center" ng-if="chatFrameStatus == 'fetch_recent_messages'">
+        載入最近對話...</h4>
+
+      <div class="messagebox" ng-if="chatFrameStatus == 'ready_to_chat'">
         <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="10" min-scrollbar-length="20" scroll-glue>
 
           <div class="messagelist">
@@ -33,7 +42,7 @@
     <nav class="navbar navbar-default navbar-messagebox">
       <div class="input-group">
         <input type="text" class="form-control" placeholder="訊息內容"
-          ng-model="model.message" ng-keypress="inputKeypress($event)">
+          ng-model="model.message" ng-keypress="inputKeypress($event)" ng-disabled="chatFrameStatus != 'ready_to_chat'">
         <span class="input-group-btn">
           <button class="btn btn-default" type="button" ng-click="sendMessage()">送出</button>
         </span>
@@ -42,21 +51,29 @@
   </div>
 </div>
 
-<div class="col-xs-4 buddy-frame" ng-controller="buddyCtrl">
-  <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="10" min-scrollbar-length="20">
-    <div class="list-group buddy-list">
-      <a href="#" class="list-group-item" ng-repeat="buddy in buddies" ng-click="selectBuddy(buddy)"
-        ng-class="(buddyProfile && buddyProfile.mid == buddy.mid) ? 'active' : ''">
-        <div class="contact">
-          <img class="img-circle avatar" ng-src="http://os.line.naver.jp/{{ buddy.picturePath }}/preview" ng-if="buddy.picturePath" />
-          <img class="img-circle avatar" src="/img/no-avatar.png" ng-if="!buddy.picturePath"/>
-
-          <div class="description">
-            <h4 class="list-group-item-heading">{{ buddy.displayName }}</h4>
-            <p class="list-group-item-text">{{ buddy.mid }}</p>
-          </div>
-        </div>
-      </a>
+<div class="col-xs-4 buddy-frame" ng-if="chatFrameStatus != 'intialize'">
+  <div class="buddy-container">
+    <div class="input-group search-buddy">
+      <span class="input-group-addon"><i class="fa fa-search"></i></span>
+      <input type="text" class="form-control" placeholder="使用者名稱" aria-describedby="basic-addon1" ng-model="searchBuddyName">
     </div>
-  </perfect-scrollbar>
+    <div class="buddy-list">
+      <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="10" min-scrollbar-length="20">
+        <div class="list-group">
+          <a href="#" class="list-group-item" ng-repeat="buddy in buddies | filter:searchBuddyName" ng-click="selectBuddy(buddy)"
+            ng-class="(buddyProfile && buddyProfile.mid == buddy.mid) ? 'active' : ''">
+            <div class="contact">
+              <img class="img-circle avatar" ng-src="http://os.line.naver.jp/{{ buddy.picturePath }}/preview" ng-if="buddy.picturePath" />
+              <img class="img-circle avatar" src="/img/no-avatar.png" ng-if="!buddy.picturePath"/>
+
+              <div class="description">
+                <h4 class="list-group-item-heading">{{ buddy.displayName }}</h4>
+                <p class="list-group-item-text">{{ buddy.mid }}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </perfect-scrollbar>
+    </div>
+  </div>
 </div>

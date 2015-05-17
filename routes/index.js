@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var md5 = require('MD5');
-var SocketClient = require('../lib/socket').Client;
+var SocketClient = require('../lib/socket_client');
 
 /* GET home page. */
 
