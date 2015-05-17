@@ -2,10 +2,10 @@ body, html, .container {
   height: 100%; }
 
 .container {
-  width: 970px !important;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
+  width: 970px !important; }
+
+#chat {
+  overflow: hidden; }
 
 .buddy-container {
   position: relative;
@@ -43,9 +43,7 @@ body, html, .container {
 
 .buddy-frame, .chat-frame {
   position: relative;
-  height: 100%;
-  overflow-y: hidden;
-}
+  height: 100%; }
 
 .scroller {
   height: 100%;

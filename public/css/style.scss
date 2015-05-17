@@ -4,8 +4,10 @@ body, html, .container {
 
 .container {
   width: 970px !important;
-  overflow-x: hidden;
-  overflow-y: hidden;
+}
+
+#chat {
+  overflow: hidden;
 }
 
 .buddy-container {
